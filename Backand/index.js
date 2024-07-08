@@ -1,3 +1,4 @@
+
 const express = require('express');
 const cors = require('cors');
 const prisma = require('./lib/prisma.js');
@@ -6,8 +7,14 @@ const axios = require('axios');
 const app = express();
 const PORT = process.env.PORT || 8000;
 
+
+
 app.use(cors());
 app.use(express.json());
+
+const template={
+  
+}
 
 app.post('/questions', async (req, res) => {
   const { title, content, language, testCases } = req.body;
@@ -93,17 +100,19 @@ int main() {
 }`;
       case 62: // Java
         return `
+import java.util.*;
 public class Main {
+${template}
   public static void main(String[] args) {
     java.util.Scanner scanner = new java.util.Scanner(System.in);
     while (scanner.hasNext()) {
       int a = scanner.nextInt();
       int b = scanner.nextInt();
-      System.out.println(f(a, b));
+      System.out.print(f(a, b));
     }
   }
 }
-${template}`;
+`;
       case 71: // Python
         return `
 ${template}
@@ -144,7 +153,7 @@ if __name__ == "__main__":
         url: 'https://judge0-ce.p.rapidapi.com/submissions?base64_encoded=true&wait=false&fields=*',
         headers: {
           'Content-Type': 'application/json',
-          'x-rapidapi-key': '2c37770347msh679d0457d024074p1075f6jsnf4583f1ea8c4',
+          'x-rapidapi-key': 'ce4ea634bfmsh36c5a38533faaecp1c6336jsn9396a7944d85',
           'x-rapidapi-host': 'judge0-ce.p.rapidapi.com',
         },
         data: {
@@ -164,7 +173,7 @@ if __name__ == "__main__":
         method: 'GET',
         url: `https://judge0-ce.p.rapidapi.com/submissions/${token}?base64_encoded=true&fields=*`,
         headers: {
-          'x-rapidapi-key': '2c37770347msh679d0457d024074p1075f6jsnf4583f1ea8c4',
+          'x-rapidapi-key': 'ce4ea634bfmsh36c5a38533faaecp1c6336jsn9396a7944d85',
           'x-rapidapi-host': 'judge0-ce.p.rapidapi.com',
         },
       };
