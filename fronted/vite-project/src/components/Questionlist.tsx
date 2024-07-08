@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 interface Question {
@@ -14,7 +14,7 @@ export function QuestionList() {
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/getquestions');
+                const response = await axios.get('https://complier.onrender.com/getquestions');
                 setQuestions(response.data);
             } catch (error) {
                 console.error('Error fetching questions:', error);

@@ -1,18 +1,11 @@
 import axios from 'axios';
-import React, { FormEvent, useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 interface TestCase {
     input: string;
     expected: string;
 }
 
-interface Question {
-    id: number;
-    title: string;
-    content: string;
-    language: string;
-    testCases: TestCase[];
-}
 
 
 export function AddQuestion() {

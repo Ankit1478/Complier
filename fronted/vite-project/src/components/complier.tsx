@@ -28,7 +28,7 @@ export function Compiler() {
     useEffect(() => {
         const fetchQuestion = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/getquestion/${id}`);
+                const response = await axios.get(`https://complier.onrender.com/getquestion/${id}`);
                 setQuestion(response.data);
             } catch (error) {
                 console.error('Error fetching question:', error);
@@ -46,7 +46,7 @@ export function Compiler() {
 
         const options = {
             method: 'POST',
-            url: 'http://localhost:8000/compile',
+            url: 'https://complier.onrender.com/compile',
             data: {
                 languageId,
                 functionTemplate,
@@ -167,6 +167,7 @@ export function Compiler() {
                             <h2 className="font-semibold text-gray-900">Output</h2>
                             <div dangerouslySetInnerHTML={{ __html: output }} className="bg-gray-200 p-4 rounded-lg mt-1"></div>
                         </div>
+                        {allPassed}
                     </div>
                 </div>
             </div>
