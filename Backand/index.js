@@ -153,7 +153,7 @@ if __name__ == "__main__":
         url: 'https://judge0-ce.p.rapidapi.com/submissions?base64_encoded=true&wait=false&fields=*',
         headers: {
           'Content-Type': 'application/json',
-          'x-rapidapi-key': 'ce4ea634bfmsh36c5a38533faaecp1c6336jsn9396a7944d85',
+          'x-rapidapi-key': process.env.Rapidapi-key,
           'x-rapidapi-host': 'judge0-ce.p.rapidapi.com',
         },
         data: {
@@ -173,7 +173,7 @@ if __name__ == "__main__":
         method: 'GET',
         url: `https://judge0-ce.p.rapidapi.com/submissions/${token}?base64_encoded=true&fields=*`,
         headers: {
-          'x-rapidapi-key': 'ce4ea634bfmsh36c5a38533faaecp1c6336jsn9396a7944d85',
+          'x-rapidapi-key': process.env.Rapidapi-key,
           'x-rapidapi-host': 'judge0-ce.p.rapidapi.com',
         },
       };
